@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TodoListViewModel>
+<div class="container">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-light" onclick="goEdit()">Insert</button>
+    </div>
+    @foreach (TodoListViewModel i in Model)
+    {
+        <div class="card m-1" onclick="todoCardClick('@i.Id')">
+            <div class="card-body ">
+                <span class='h3'>@i.Task</span>
+                <p class="text-secondary m-1">
+                    <small>@(@i.isCompleted ? "completed" : "notCompleted")</small>
+                </p>
+            </div>
+
+        </div>
+    }
+</div>
+
+<script defer>
+    function todoCardClick(id) {
+        window.location.replace("/todo/detail/" + id);
+    }
+    function goEdit() {
+        window.location.replace("/todo/insert");
+    }
+</script>

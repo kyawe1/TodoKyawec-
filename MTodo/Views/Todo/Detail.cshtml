@@ -1,0 +1,22 @@
+﻿@model TodoListViewModel 
+
+<div class="d-flex justify-content-end">
+    <button class="btn btn-light" onclick="goEdit('@Model.Id')">Edit</button>
+</div>
+
+<form method="post">
+    <div class="m-1">
+        <label class="form-label">Task</label>
+        <input type="text" class="form-control" asp-for="Task" disabled/>
+    </div>
+    <div class='m-1'>
+        <input type="checkbox" class="form-check-input" asp-for="isCompleted" disabled/>
+        <label class="form-check-label">Finished</label>
+    </div>
+</form>
+
+<script>
+    function goEdit(id){
+        window.location.replace("/todo/update/"+id);
+    }
+</script>

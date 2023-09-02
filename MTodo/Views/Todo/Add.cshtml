@@ -1,0 +1,17 @@
+﻿
+
+@model TodoCreateViewModel 
+
+<form method="post">
+    <div class="m-1">
+        <label class="form-label">Task</label>
+        <input type="text" class="form-control" asp-for="Task" />
+    </div>
+    <div class='m-1'>
+        <input type="checkbox" class="form-check-input" asp-for="isCompleted" />
+        <label class="form-check-label">Finished</label>
+    </div>
+    <div class='m-1'>
+        <button type="submit" class="btn btn-primary">Insert</button>
+    </div>
+</form>
