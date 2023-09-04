@@ -90,6 +90,7 @@ public class AuthController : Controller
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [ActionName("Logout")]
     public async Task<IActionResult> LogoutAction()
     {
         await HttpContext.SignOutAsync();
